@@ -1,488 +1,72 @@
-<!doctype html>
-<html> 
- <head> 
-  <title>Montage-About Me</title> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Introduction</title>
   <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-       .container {
-            max-width: 700px;
-            margin: 50px auto;
-            padding: 40px;
-            background-color: #f2e3d6; /* Vintage paper color */
-            box-shadow: 0 0 10px rgba(120, 220, 220, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fade-in 1s ease forwards;
-            border: 2px solid #ffffff;
-            position: relative;
-            overflow: hidden;
-        }
-        .container:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('31b75f58864f6f99ce63bfde9267dfc0.jpg');
-            opacity: 0.8;
-            pointer-events: none;
-
-        }
-
-        .container:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: calc(100% - 4px);
-            height: calc(100% - 4px);
-            border: 2px dashed #ffffff;
-            z-index: -1;
-
-        }
-
-        .container:before {
-
-            content: '';
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6);
-
-            pointer-events: none;
-
-        }
-
-        @keyframes fade-in {
-
-            0% {
-
-                opacity: 0;
-
-                transform: translateY(20px);
-
-            }
-
-            100% {
-
-                opacity: 1;
-
-                transform: translateY(0);
-
-            }
-
-        }
-
-        h1 {
-
-            font-size: 32px;
-
-            color: #ffffff;
-
-            margin-bottom: 20px;
-
-            opacity: 0;
-
-            transform: translateX(-20px);
-
-            animation: slide-in 1s ease forwards;
-
-        }
-
-        @keyframes slide-in {
-
-            0% {
-
-                opacity: 0;
-
-                transform: translateX(-20px);
-
-            }
-
-            100% {
-
-                opacity: 1;
-
-                transform: translateX(0);
-
-            }
-
-        }
-
-        p {
-
-            line-height: 1.5;
-
-            opacity: 100;
-
-            transform: translateX(20px);
-
-            animation: slide-in 1s ease forwards;
-
-            animation-delay: 0.5s;
-
-            font-size: 12px;
-
-            colour: black;
-
-            font-family: Playfair Display, serif;
-
-            
-
-        }
-
-        .About-Montage {
-
-            margin-top: 40px;
-
-            opacity: 0;
-
-            transform: translateY(20px);
-
-            animation: fade-in 1s ease forwards;
-
-            animation-delay: 1s;
-
-            border: 2px solid #ffffff;
-
-            padding: 20px;
-
-            border-radius: 5px;
-
-            position: relative;
-
-            background-color: rgba(0, 0, 0, 0.8);
-
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-
-        }
-
-        .light-effect {
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, rgba(0, 120, 250, 0.5) 500%);
-
-            pointer-events: none;
-
-            opacity: 0;
-
-            transition: opacity 0.5s ease;
-
-        }
-
-        .About-Montage:hover .light-effect {
-
-            opacity: 1;
-
-        }
-
-        @keyframes neon-glow {
-
-            0% {
-
-                text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff, 0 0 70px #00ffff;
-
-            }
-
-            100% {
-
-                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff, 0 0 70px #00ffff, 0 0 85px #00ffff;
-
-            }
-
-        }
-
-        .about-me {
-
-            background-color: rgba(0, 0, 0, 0.8);
-
-            padding: 10px 20px;
-
-            border-radius: 5px;
-
-            color: #ffffff;
-
-            font-weight: bold;
-
-            font-size: 24px;
-
-            text-align: center;
-
-            margin-bottom: 20px;
-
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-
-            cursor: pointer;
-
-            transition: background-color 0.3s ease;
-
-        }
-
-        .about-me:hover {
-
-            background-color: rgba(0, 120, 255, 1);
-
-        }
-
-        .neon-text {
-
-            animation: neon-glow 1.5s ease-in-out infinite alternate;
-
-        }
-
-        .vibrant-colors {
-
-            color: #700cf2;
-
-        }
-
-        .animation-container {
-
-            position: relative;
-
-            overflow: hidden;
-
-            margin-top: 20px;
-
-        }
-
-        .animation-container img {
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            opacity: 0;
-
-            animation: fade-in 1s ease forwards;
-
-        }
-
-        @keyframes fade-in {
-
-            0% {
-
-                opacity: 0;
-
-            }
-
-            100% {
-
-                opacity: 1;
-
-            }
-
-        }
-
-        .animation-container img:first-child {
-
-            animation-delay: 1s;
-
-        }
-
-        .animation-container img:last-child {
-
-            animation-delay: 2s;
-
-        }
-
-        .border-effect {
-
-            animation: border-flash 2s infinite alternate;
-
-        }
-
-        @keyframes border-flash {
-
-            0% {
-
-                box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.6);
-
-            }
-
-            100% {
-
-                box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.6);
-
-            }
-
-        }
-
-        .copyright {
-
-            font-size: 12px;
-
-            text-align: center;
-
-            margin-top: 20px;
-
-            color: #ffffff;
-
-            opacity: 1;
-
-        }
-   h2{
-   font-size:25px;
-   }
-
-    </style> 
-
- </head> 
-
- <body> 
-
-  <div class="container"> 
-
-   <h1 class="neon-text">About Me</h1> 
-
-   <p> Hello There! My Name Is Shihab Sarwar and I am a Theoritical Physicist and I try to improve the Laws of Physics and Mathematics. I Intend to Innovate and Optimise many Laws in such a way, that the laws become easy to comprehend and understand, so that it can be useful for the developement of humanity. There are Many laws on which I have worked and developed which are, indeed new but not enough to revolutionize the world. Thus, I am working on my other ideas which I intend to publish in the near future and also has the potential to revolutionize many laws of physics, until now its just an idea but an Intelligent personality must wait to see what this idea brings up to the reality. </p> 
-
-   <p> Now lets talk about My Interests. Well Its quit simple I am Interested in Computer Science and Editing, Thus I Make My Edits In my free Time for my Entertainment and upload it on social media (until now only on Instagram:- @Chiteki10) for the entertainment purposes. </p> 
-
-   <div class="About-Montage"> 
-
-    <div class="light-effect"></div> 
-
-    <div class="About-Montage"> 
-
-     <h2 class="neon-text vibrant-colors" >About-Montage</h2> 
-
-     <p> Montage is an Animation Company founded by MD. Shihab Sarwar in 2023. Up Until now it has only worked on one project, now available on Youtube and Instagram only. The animated clips were rendered and edited prior uploading. Montage has its own Youtube Channel (@Montage-finesse). The Montage Promises extremely well rendered animation of high quality in the near Future. <strong>Hold Tight, for thrilling Upcoming Events!!!</strong> </p> 
-
-     <div class="animation-container"> 
-
-      <div class="space-gif"> 
-
-       <img src="giphy (1).change" alt="Animated Space GIF"> 
-
-      </div> 
-
-      <div class="space-gif"> 
-
-       <img src="giphy.gif.change" alt="Animated Space GIF"> 
-
-      </div> 
-
-     </div> 
-
-     <div class="border-effect"></div> 
-
-    </div> 
-
-   </div> 
-
-  </div> 
-
-  <div class="copyright">
-
-    © 2023 Montage.pvt.ltd. All rights reserved. 
-
-  </div> 
-
-  <script>
-
-    window.addEventListener("DOMContentLoaded", function () {
-
-        var container = document.querySelector(".container");
-
-        var title = document.querySelector("h1");
-
-        var paragraphs = document.querySelectorAll("p");
-
-        var uselessSection = document.querySelector(".useless-section");
-
-        container.style.opacity = 1;
-
-        container.style.transform = "translateY(0)";
-
-        title.style.opacity = 1;
-
-        title.style.transform = "translateX(0)";
-
-        paragraphs.forEach(function (paragraph) {
-
-            paragraph.style.opacity = 1;
-
-            paragraph.style.transform = "translateX(0)";
-
-        });
-
-        uselessSection.style.opacity = 1;
-
-        uselessSection.style.transform = "translateY(0)";
-
-        var animationContainer = document.querySelector(".animation-container");
-
-        var animatedGIFs = document.querySelectorAll(".animation-container img");
-
-        animationContainer.addEventListener("mouseover", function () {
-
-            animatedGIFs.forEach(function (gif) {
-
-                gif.style.animationPlayState = "paused";
-
-            });
-
-        });
-
-        animationContainer.addEventListener("mouseout", function () {
-
-            animatedGIFs.forEach(function (gif) {
-
-                gif.style.animationPlayState = "running";
-
-            });
-
-        });
-
-        var aboutMe = document.querySelector(".about-me");
-
-        var lightEffect = document.querySelector(".light-effect");
-
-        aboutMe.addEventListener("click", function () {
-
-            lightEffect.style.opacity = 1;
-
-            setTimeout(function () {
-
-                lightEffect.style.opacity = 0;
-
-            }, 1000);
-
-        });
-
-    });
-
-</script> 
-
- </body>
-
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f9;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #2c3e50;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeInText 1.5s ease-in forwards;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInText {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="fade-in">Hello, I'm Shihab Sarwar</h1>
+    <p class="fade-in">
+      I'm a passionate learner with a strong interest in physics, technology, and solving complex problems.
+      I enjoy exploring new ideas and love working on projects that challenge my intellect and creativity.
+      Currently, I'm diving deeper into web development and AI-based systems.
+     
+     Hello There! My Name Is Shihab Sarwar and I am a Theoritical Physicist and I try to improve the Laws of Physics and Mathematics. I Intend to Innovate and Optimise many Laws in such a way, that the laws become easy to comprehend and understand, so that it can be useful for the developement of humanity. There are Many laws on which I have worked and developed which are, indeed new but not enough to revolutionize the world. Thus, I am working on my other ideas which I intend to publish in the near future and also has the potential to revolutionize many laws of physics, until now its just an idea but an Intelligent personality must wait to see what this idea brings up to the reality.
+   Now lets talk about My Interests. Well Its quit simple I am Interested in Computer Science and Editing, Thus I Make My Edits In my free Time for my Entertainment and upload it on social media (until now only on Instagram:- @Chiteki10) for the entertainment purposes. 
+    </p> 
+  </div>
+</body>
 </html>
